@@ -8,7 +8,6 @@
   class DevicesButton extends Simditor.Button
     name: 'devices'
     title: 'devices'
-    icon: 'devices-viewer'
     menu: true
     @i18n =
       'zh-CN':
@@ -32,6 +31,10 @@
         param: 'mobile'
       }]
       super
+      @setIcon('devices-viewer')
+
+    setIcon: (icon)->
+      @el.find('span').removeClass().addClass('icon-' + icon)
 
     openViewer: (content, type) ->
       title = @_t('Mobile View')
