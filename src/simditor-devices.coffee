@@ -1,7 +1,3 @@
-Simditor.i18n =
-  'zh-CN':
-    'PC View': '电脑预览'
-    'Mobile View': '手机预览'
 
 ((factory)->
   if (typeof define is 'function') and define.amd
@@ -12,9 +8,17 @@ Simditor.i18n =
   class DevicesButton extends Simditor.Button
     name: 'devices'
     title: 'devices'
+    icon: 'devices-viewer'
+    menu: true
+    @i18n =
+      'zh-CN':
+        'PC View': '电脑预览'
+        'Mobile View': '手机预览'
+      'en-US':
+        'PC View': 'PC View'
+        'Mobile View': 'Mobile View'
 
     constructor: ->
-      @isExpand = false
       super
 
     _init: ->
@@ -28,10 +32,6 @@ Simditor.i18n =
         param: 'mobile'
       }]
       super
-      @setIcon('devices-viewer')
-
-    setIcon: (icon) ->
-      @el.find('span').removeClass().addClass('icon-' + icon)
 
     openViewer: (content, type) ->
       title = @_t('Mobile View')
@@ -43,7 +43,7 @@ Simditor.i18n =
       <html>
         <head>
           <title>#{title}</title>
-          <link rel="stylesheet" href="styles/simditor-devices-#{css}.css">
+          <link rel="stylesheet" href="./styles/simditor-devices-#{css}.css">
         </head>
         <body>
           <div class="simditor-device">
@@ -56,8 +56,6 @@ Simditor.i18n =
       """
       @win = window.open('about:blank')
       @win.document.write(html)
-
-
 
 
     command: (param) ->
