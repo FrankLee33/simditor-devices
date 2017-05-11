@@ -19,7 +19,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.toolbar-menu-devices {
+  right: auto!important;
+  left: 0px!important;
+}
 .icon-devices-viewer:before {
   content: "\e9ce";
 }
