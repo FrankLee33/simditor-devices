@@ -33,30 +33,35 @@ Simditor.i18n =
     setIcon: (icon) ->
       @el.find('span').removeClass().addClass('icon-' + icon)
 
-    openViewer: (content) ->
-      title = '手机预览'
-      className = 'mobile'
+    openViewer: (content, type) ->
+      title = @_t('Mobile View')
+      css = 'mobile'
+      if (type == 'pc')
+        title = @_t('PC View')
+        css = 'pc'
       html = """
       <html>
         <head>
           <title>#{title}</title>
-          <link rel=\"stylesheet\" href=\"styles/simditor-devices.css\">
+          <link rel="stylesheet" href="styles/simditor-devices-#{css}.css">
         </head>
-        <body class=\"simditor-device-#{className}\">
-          #{content}
+        <body>
+          <div class="simditor-device">
+            <div class="simditor-content">
+              #{content}
+            </div>
+          </div>
         </body>
       </html>
       """
       @win = window.open('about:blank')
       @win.document.write(html)
 
-    # 全屏
-    doMobileView: ->
-      @openViewer(@editor.getValue())
+
+
 
     command: (param) ->
-      console.log('>>>>', param)
-      @doMobileView()
+      @openViewer(@editor.getValue(), param)
 
   Simditor.Toolbar.addButton(DevicesButton)
 )

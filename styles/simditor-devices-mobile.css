@@ -1,0 +1,13 @@
+body {
+  background: #fbfbfb
+}
+.simditor-device {
+  width: 346px;
+  height: 612px;
+  margin: 0 auto;
+  border: 1px solid #d5d5d8;
+  box-shadow: 1px 1px 3px #ccc;
+  overflow: auto
+}
+.simditor-content {
+}
