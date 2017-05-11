@@ -1,0 +1,29 @@
+{
+  "name": "simditor-devices",
+  "version": "0.0.1",
+  "homepage": "https://github.com/huyinghuan/simditor-devices",
+  "authors": [
+    "felix33 <lifei800@qq.com>"
+  ],
+  "description": "a devices plugin for Simditor",
+  "main": "lib/js",
+  "keywords": [
+    "simditor",
+    "devices"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "simditor": "~2.1.5"
+  },
+  "devDependencies": {
+    "requirejs": "~2.1.15"
+  }
+}
