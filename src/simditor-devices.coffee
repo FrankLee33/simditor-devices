@@ -29,7 +29,6 @@
       ]
       if (@editor.opts.devices)
         @actions = @editor.opts.devices
-      console.log(@editor.opts.devices)
       @menu = []
       for key,item of @actions
         @menu.push({name: "m#{key}", text: item.text, param: key})
